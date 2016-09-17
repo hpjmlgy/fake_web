@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="browser.js" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/browser.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/browser.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

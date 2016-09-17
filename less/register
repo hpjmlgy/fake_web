@@ -1,0 +1,295 @@
+body {
+  background-color: #FEFEFE;
+}
+
+.min_width {
+  min-width: 1210px;
+}
+
+.nav_login {
+  width: 100%;
+  height: 40px;
+  background-color: #1D1817;
+  min-width: 1210px;
+}
+
+.login_module {
+  position: relative;
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  padding-right: 100px;
+}
+
+.login_module:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.login_module div {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  text-align: center;
+}
+
+#login {
+  height: 20px;
+  width: 66px;
+  border-right: 1px solid white;
+}
+
+#login:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.nav_main {
+  height: 40px;
+  background-color: #1D1817;
+  position: relative;
+  height: 150px;
+  background-color: #FFFFFF;
+  width: 100%;
+  min-width: 1210px;
+  margin: 0 auto;
+}
+
+#register {
+  width: 66px;
+  border-right: 1px solid white;
+  height: 20px;
+}
+
+#help {
+  height: 20px;
+  padding-left: 10px;
+}
+
+.nav_module {
+  position: relative;
+  width: 1210px;
+  min-width: 1210px;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  vertical-align: middle;
+}
+
+#logo {
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+  background-image: url(../img/logo.jpg);
+}
+
+#main_nav {
+  display: inline-block;
+  position: absolute;
+  left: 250px;
+  top: 80px;
+  height: 100%;
+}
+
+#main_nav ul li {
+  display: inline-block;
+  margin-left: 80px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333333;
+}
+
+#gallery {
+  position: relative;
+  margin: 0 auto;
+  height: 688px;
+  width: 100%;
+  min-width: 1210px;
+  border-top: 1px solid darkgray;
+  #register_form {
+    display: block;
+    position: relative;
+    height: 580px;
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+  #describe {
+    display: block;
+    font-size: 28px;
+    color: #d62902;
+    margin-bottom: 40px;
+  }
+  #mail, #nickname, #loginpassword, #confirmpassword, #checkcode {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+    #describe_mail, #describe_nickname, #describe_loginpassword, #describe_confirmpassword, #describe_checkcode {
+      display: inline-block;
+      height: 100%;
+      float: left;
+      font-size: 22px;
+      color: #333333;
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+    }
+    #input_mail, #input_nickname, #input_loginpassword, #input_confirmpassword {
+      display: inline-block;
+      float: left;
+      height: 46px;
+      width: 380px;
+      margin-left: 20px;
+      font-size: 22px;
+      color: #333333;
+      border: 1px solid #cccccc;
+      text-indent: 1.5em;
+    }
+    #mail_tooltip {
+      display: inline-block;
+      margin-top: 16px;
+      padding-left: 117px;
+      float: left;
+      font-size: 18px;
+      color: #cccccc;
+    }
+
+  }
+  #nickname, #loginpassword {
+    margin-top: 10px;
+  }
+  #input_checkcode {
+    display: inline-block;
+    float: left;
+    height: 46px;
+    margin-left: 40px;
+    font-size: 22px;
+    color: #333333;
+    border: 1px solid #cccccc;
+    text-indent: 1.5em;
+    width: 190px;
+  }
+  #pic_checkcode {
+    display: inline-block;
+    float: left;
+    height: 46px;
+    width: 170px;
+    margin-left: 20px;
+    border: 1px solid #cccccc;
+  }
+  #submit_info {
+    display: block;
+    width: 505px;
+    height: 70px;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    background-color: #d62902;
+    margin-top: 30px;
+    border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+#nickname_tooltip{
+  display: inline-block;
+  margin-top: 16px;
+  width:100%;
+  padding-left: 117px;
+  float: left;
+  font-size: 18px;
+  color: #cccccc;
+}
+
+#login_wrapper, #describe_otherlogin {
+  display: block;
+  position: relative;
+  height: 28px;
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 40px;
+  span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 28px;
+    color: #333333;
+    a {
+      color: #d62902;
+    }
+  }
+}
+
+.wrapper {
+  display: block;
+  height: 100%;
+  width: 550px;
+  margin: 0 auto;
+  div {
+    height: 100%;
+    width: 140px;
+    float: left;
+    font-size: 28px;
+    color: #999999;
+  }
+  #left, #right {
+    height: 1px;
+    width: 140px;
+    background-color: #999999;
+    margin-top: 14px;
+  }
+  #left {
+    margin-right: 40px;
+  }
+  #right {
+    margin-left: 40px;
+  }
+}
+
+#third_wrapper {
+  display: block;
+  height: 200px;
+  width: 550px;
+  margin: 0 auto;
+  #weibo,#qq {
+    display: inline-block;
+    float: left;
+    height:100%;
+    width:275px;
+  }
+
+}
+#copyright {
+  .nav_login;
+  display: block;
+  position: relative;
+  height: 190px;
+  background-color:#FEFEFE;
+  border-top:1px solid #999999;
+}
+
+#copyright_content {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 88px;
+}

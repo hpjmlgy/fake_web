@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Fake Web</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+
+
+</head>
+<body>
+<nav class="nav_login">
+    <div class="login_module ">
+        <div id="login">登录</div>
+        <div id="register">注册</div>
+        <div id="help">帮助中心</div>
+    </div>
+</nav>
+
+<nav class="nav_main ">
+    <div class="nav_module">
+        <div id="logo"></div>
+        <div id="main_nav">
+            <ul>
+                <li>首页</li>
+                <li>照片冲印</li>
+                <li>照片书</li>
+                <li>摆台版画</li>
+                <li>高端影像</li>
+                <li>时光台历</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="gallery">
+    <form action="post" id="login_form">
+        <span id="describe">登录Mimoprint</span>
+        <div id="mail">
+            <p id="describe_mail">邮箱</p>
+            <i id="icon_mail"></i>
+            <input id="input_mail" type="text" name="login" placeholder="注册时使用的邮箱">
+        </div>
+        <div id="password">
+            <p id="describe_password">密码</p>
+            <i id="icon_password"></i>
+            <input id="input_password" type="text" name="login" placeholder="输入注册密码">
+        </div>
+        <div id="mark_wrapper">
+            <input id="checkbox" name="checkbox" type="checkbox" value="checkbox" checked="checked" />
+            <p id="check_word">下次自动登陆</p>
+            <a href="" id="forget_password">忘记密码？</a>
+        </div>
+        <button id="submit_info" type="submit" name="submit">登录</button>
+    </form>
+</div>
+
+<div id="copyright">
+    <div id="copyright_content">Copyright 2016, 版权所有 北京时光绘数码科技有限公司 京ICP备09190341号</div>
+</div>
+
+
+<script type="text/babel">
+    //    //Data source
+    //    var data_Nav_img=[{key:1,src:"img/zpcy.jpg"},{key:2,src:"img/zpcy.jpg"},{key:3,src:"img/zpcy.jpg"},{key:4,src:"img/zpcy.jpg"}];
+    //    //Nav_img component
+    //    var Nav_img = React.createClass({
+    //        render: function() {
+    //            var navGrids=this.props.data.map(function (elem) {
+    //                return (
+    //                        <div className="nohorizonpadding col-xs-3 col-md-3 col-lg-3" key={elem.key}>
+    //                            <div className="item">
+    //                               <img  className="full_width" src={elem.src}></img>
+    //                            </div>
+    //                        </div>
+    //                )
+    //            });
+    //            return (
+    //                    <div className="row">
+    //                        {navGrids}
+    //                    </div>
+    //            );
+    //        }
+    //    });
+    //
+    //    ReactDOM.render(
+    //            <Nav_img data={data_Nav_img} />,
+    //            document.getElementById('navGrid')
+    //    );
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    })
+</script>
+
+</body>
+</html>
