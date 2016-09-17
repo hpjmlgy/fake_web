@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="react pack" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/react.js" />
+        <item url="file://$PROJECT_DIR$/js/react-dom.js" />
+        <item url="file://$PROJECT_DIR$/js/react-with-addons.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/prefixfree.min.js" />
+      <root url="file://$PROJECT_DIR$/js/react.js" />
+      <root url="file://$PROJECT_DIR$/js/react-dom.js" />
+      <root url="file://$PROJECT_DIR$/js/react-with-addons.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

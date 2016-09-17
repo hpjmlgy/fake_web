@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Fake Web</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<nav class="nav_login">
+    <div class="login_module ">
+        <div id="login">登录</div>
+        <div id="register">注册</div>
+        <div id="help">帮助中心</div>
+    </div>
+</nav>
+
+<nav class="nav_main ">
+    <div class="nav_module">
+        <div id="logo"></div>
+        <div id="main_nav">
+            <ul>
+                <li>首页</li>
+                <li>照片冲印</li>
+                <li>照片书</li>
+                <li>摆台版画</li>
+                <li>高端影像</li>
+                <li>时光台历</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="gallery">
+
+    <form action="post" id="register_form">
+        <span id="describe">注册成为时光绘会员</span>
+        <div id="mail">
+            <p id="describe_mail">*常用邮箱</p>
+            <input id="input_mail" type="text" name="input_mail" placeholder="">
+            <p id="mail_tooltip">作为登录帐号、收取发货通知以及领取优惠券</p>
+        </div>
+        <div id="nickname">
+            <p id="describe_nickname">*作家笔名</p>
+            <input id="input_nickname" type="text" name="nickname" placeholder="">
+            <p id="nickname_tooltip">给自己起一个响亮或很有艺术感的名号吧</p>
+        </div>
+        <div id="loginpassword">
+            <p id="describe_loginpassword">*登录密码</p>
+            <input id="input_loginpassword" type="password" name="loginpassword" placeholder="">
+        </div>
+        <div id="confirmpassword">
+            <p id="describe_confirmpassword">*确认密码</p>
+            <input id="input_confirmpassword" type="password" name="confirmpassword" placeholder="">
+        </div>
+        <div id="checkcode">
+            <p id="describe_checkcode">*验证码</p>
+            <input id="input_checkcode" type="text" name="checkcode" placeholder="">
+            <div id="pic_checkcode"></div>
+        </div>
+        <button id="submit_info" type="submit" name="submit">注册</button>
+    </form>
+    <div id="login_wrapper"><span>已经注册 ？  立即  <a href="#">登录</a></span></div>
+    <div id="describe_otherlogin">
+        <div class="wrapper">
+            <div id="left"></div>
+            <div id="middle">第三方登录</div>
+            <div id="right"></div>
+        </div>
+    </div>
+    <div id="third_wrapper">
+        <div id="weibo"></div>
+        <div id="qq"></div>
+    </div>
+    <div id="copyright">
+        <div id="copyright_content">Copyright 2016, 版权所有 北京时光绘数码科技有限公司 京ICP备09190341号</div>
+    </div>
+
+</div>
+
+</body>
+</html>
