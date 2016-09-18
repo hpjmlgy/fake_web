@@ -19,6 +19,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   height: 100%;
+
   padding-right: 100px;
   &:before {
     content: '';
@@ -117,7 +118,7 @@ body {
 
 #ad_top {
   .nav_main;
-  height: 300px;
+  height: 340px;
   width: 1210px;
   .min_width;
 
@@ -138,28 +139,43 @@ body {
     float: left;
     display: block;
     #ad_top_left;
-    width: 400px;
+    width:410px;
   }
   #ad_top_rt {
     display: block;
-    height: 140px;
+    height: 170px;
     width: 100%;
   }
   #ad_top_rb {
     display: block;
-    height: 140px;
+    height: 170px;
     width: 100%;
   }
 }
 
 .label_popular {
+  display: block;
+  position: relative;
   margin: 0 auto;
-  border: 1px solid;
-  height: 28px;
   width: 1210px;
   //.min_width;
-  margin-top: 30px;
-  background-image: url(../img/label_popular.jpg);
+  height:28px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  .en_word,.zh_word{
+    display: inline-block;
+    height:100%;
+    position: relative;
+    float: left;
+    border-left:5px solid #d62902;
+    font-size:28px;
+    color: #333333;
+    text-indent: 20px;
+  }
+  .zh_word{
+    color:#d62902;
+    border:0px;
+  }
 }
 
 //.wrapper{
@@ -190,7 +206,9 @@ body {
   display: block;
   height: 270px;
   width: 100%;
-  background-image: url(../img/product_test.jpg);
+  //background-image: url(../img/product_test.jpg);
+  //background-image: url(../img/product_test.jpg);
+  //background-image: url(attr'('data-src')');
   overflow: hidden;
 }
 
