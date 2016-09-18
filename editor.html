@@ -25,7 +25,7 @@
 <div id="main_platform">
     <section id="edit">
         <section id="book_editor_all_wrapper"
-                 style="transform-origin:0 0;transform:scale(0.3) ; width: 1836px; height: 1216px;">
+                 style="transform-origin:0px 0px;transform:scale(0.3) ; width: 1836px; height: 1216px;">
             <div class="page_left"
                  style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>
             <div class="page_right"
@@ -41,13 +41,17 @@
         var edit_platform_height = $('#edit').height();
         var wrapper_width = $('#book_editor_all_wrapper').width();
         var wrapper_height = $('#book_editor_all_wrapper').height();
+
         console.log(edit_platform_width)
+        console.log(edit_platform_height)
+
         console.log(wrapper_width)
-        var translate_x = (edit_platform_width / 2) - (wrapper_width / 2);
-        var translate_y = (edit_platform_height / 2) - (wrapper_height / 2);
-//        $('#book_editor_all_wrapper').css("transform","translate(50px,50px)");
-        console.log(translate_x)
-        console.log(translate_y)
+        console.log(wrapper_height)
+
+        var tempcss= $('#book_editor_all_wrapper').css("transform")
+
+        $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
+
 
     })
 </script>
