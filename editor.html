@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Fake Web</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+<aside id="left_pannel">
+    <button id="upload_img">添加照片</button>
+    <section id="uploaded_imgs_wrapper">
+        <img src="img/test_upload/IMG_5759.JPG" alt="" class="img">
+        <img src="img/test_upload/IMG_5883.JPG" alt="" class="img">
+        <img src="img/test_upload/IMG_5884.JPG" alt="" class="img">
+    </section>
+</aside>
+<!--<aside id="right_pannel"></aside>-->
+
+<div id="main_platform">
+    <section id="edit">
+        <section id="book_editor_all_wrapper"
+                 style="transform-origin:0 0;transform:scale(0.3) ; width: 1836px; height: 1216px;">
+            <div class="page_left"
+                 style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>
+            <div class="page_right"
+                 style="width: 918.425px;height: 1216.06px;left: 918px;top:0px;background-color: rgb(250, 246, 242);"></div>
+        </section>
+    </section>
+</div>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var edit_platform_width = $('#edit').width();
+        var edit_platform_height = $('#edit').height();
+        var wrapper_width = $('#book_editor_all_wrapper').width();
+        var wrapper_height = $('#book_editor_all_wrapper').height();
+        console.log(edit_platform_width)
+        console.log(wrapper_width)
+        var translate_x = (edit_platform_width / 2) - (wrapper_width / 2);
+        var translate_y = (edit_platform_height / 2) - (wrapper_height / 2);
+//        $('#book_editor_all_wrapper').css("transform","translate(50px,50px)");
+        console.log(translate_x)
+        console.log(translate_y)
+
+    })
+</script>
+
+</html>
