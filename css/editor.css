@@ -58,7 +58,7 @@ body {
     background-color: #cccccc;
 }
 
-#main_platform .page_left,
-#main_platform .page_right {
+#book_editor_all_wrapper .page_left,
+#book_editor_all_wrapper .page_right {
     position: absolute;
 }

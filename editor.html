@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <title>Fake Web</title>
-    <script src="js/react.js"></script>
-    <script src="js/react-dom.js"></script>
+    <!--<script src="js/react.js"></script>-->
+    <!--<script src="js/react-dom.js"></script>-->
     <script src="js/jquery-3.1.0.js"></script>
     <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <!--<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>-->
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/editor.css">
 </head>
@@ -24,33 +25,57 @@
 
 <div id="main_platform">
     <section id="edit">
-        <section id="book_editor_all_wrapper"
-                 style="transform-origin:0px 0px;transform:scale(0.3) ; width: 1836px; height: 1216px;">
-            <div class="page_left"
-                 style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>
-            <div class="page_right"
-                 style="width: 918.425px;height: 1216.06px;left: 918px;top:0px;background-color: rgb(250, 246, 242);"></div>
-        </section>
+        <!--<section id="book_editor_all_wrapper"-->
+        <!--style="transform-origin:0px 0px;transform:scale(0.3) ; width: 1836px; height: 1216px;">-->
+        <!--<div class="page_left"-->
+        <!--style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>-->
+        <!--<div class="page_right"-->
+        <!--style="width: 918.425px;height: 1216.06px;left: 918px;top:0px;background-color: rgb(250, 246, 242);"></div>-->
+        <!--</section>-->
     </section>
 </div>
+
+<template id="book_page_type1">
+    <section id="book_editor_all_wrapper"
+             style="transform-origin:0px 0px; width:${wrapper_width}px; height:${height}px;" data-scale=${scale}
+             data-pageNum=${pageNum} data-book_page_type=${book_page_type}>
+        <div class="page_left"
+             style="width:${width}px; height:${height}px; left: 0px;top:0px; background-color: rgb(250, 246, 242);">
+            <img src="" alt="图片" style="width:500px; height:500px;">
+        </div>
+        <div class="page_right"
+             style="width:${width}px; height:${height}px;left: 918px;top:0px;background-color: rgb(250, 246, 242);">
+
+        </div>
+    </section>
+</template>
 
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
-        var edit_platform_width = $('#edit').width();
-        var edit_platform_height = $('#edit').height();
-        var wrapper_width = $('#book_editor_all_wrapper').width();
-        var wrapper_height = $('#book_editor_all_wrapper').height();
 
-        console.log(edit_platform_width)
-        console.log(edit_platform_height)
+//        var tempcss= $('#book_editor_all_wrapper').css("transform")
+//        $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
 
-        console.log(wrapper_width)
-        console.log(wrapper_height)
+//         $('#book_page_type1').tmpl({width:918,height:1216}).appendTo('#edit')
+        var data = {pageNum: 1,book_page_type:1, wrapper_width: 918 * 2, width: 918, height: 1216, scale: 0.3}
 
-        var tempcss= $('#book_editor_all_wrapper').css("transform")
+        function generateTemplate(template_id, data) {
+            $(template_id).tmpl(data).appendTo('#edit')
+            centerTemplate('#edit','#book_editor_all_wrapper');
 
-        $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
+        }
+        function centerTemplate(editform_id, pageWrapper_id) {
+            var edit_platform_width = $(editform_id).width();
+            var edit_platform_height = $(editform_id).height();
+            var wrapper_width = $(pageWrapper_id).width() * data.scale;
+            var wrapper_height = $(pageWrapper_id).height() * data.scale;
+            $(pageWrapper_id).css("transform", "scale(" + data.scale + ")" + "translate(" + (((edit_platform_width - wrapper_width) / 2) / data.scale) + "px," + (((edit_platform_height - wrapper_height) / 2) / data.scale) + "px)");
+        }
+
+        generateTemplate(book_page_type1, data)
+
+        console.log($('#book_editor_all_wrapper').width())
 
 
     })
