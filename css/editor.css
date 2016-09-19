@@ -1,7 +1,6 @@
 body {
     position: relative;
 }
-
 #left_pannel,
 #right_pannel {
     display: inline-block;
@@ -11,18 +10,15 @@ body {
     height: 800px;
     border: 1px solid red;
 }
-
 #left_pannel {
     left: 0;
 }
-
 #left_pannel #upload_img {
     display: block;
     height: 50px;
     width: 150px;
     margin: 5px auto;
 }
-
 #left_pannel #uploaded_imgs_wrapper {
     display: inline-block;
     position: relative;
@@ -30,7 +26,6 @@ body {
     margin-top: 5px;
     border: 1px solid greenyellow;
 }
-
 #left_pannel #uploaded_imgs_wrapper .img {
     display: inline-block;
     float: left;
@@ -39,7 +34,6 @@ body {
     background-size: contain;
     margin: 10px;
 }
-
 #main_platform {
     display: block;
     position: absolute;
@@ -49,7 +43,6 @@ body {
     top: 105px;
     left: 231px;
 }
-
 #main_platform #edit {
     display: block;
     position: relative;
@@ -57,7 +50,6 @@ body {
     height: 100%;
     background-color: #cccccc;
 }
-
 #main_platform .page_left,
 #main_platform .page_right {
     position: absolute;

@@ -41,13 +41,6 @@
         var edit_platform_height = $('#edit').height();
         var wrapper_width = $('#book_editor_all_wrapper').width();
         var wrapper_height = $('#book_editor_all_wrapper').height();
-
-        console.log(edit_platform_width)
-        console.log(edit_platform_height)
-
-        console.log(wrapper_width)
-        console.log(wrapper_height)
-
         var tempcss= $('#book_editor_all_wrapper').css("transform")
 
         $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
