@@ -7,12 +7,8 @@
     <script src="js/react-dom.js"></script>
     <script src="js/jquery-3.1.0.js"></script>
     <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <!--<script src="js/bootstrap.js"></script>-->
     <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
     <script src="js/unslider-min.js"></script>
-    <!--<script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>-->
-    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
-    <!--<link rel="stylesheet" href="css/bootstrap-theme.css">-->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="css/unslider.css">
@@ -319,23 +315,7 @@
             <Ad_top_right data={ad_top_right_data}/>,
             document.getElementById('ad_top_right')
     );
-
-    //product_character module
-
-//    <div class="product">
-//        <div class="product_pic"></div>
-//        <div class="describe">
-//
-//            <span class="title">照片台历</span>
-//            <ul class="character">
-//                <li>专业时尚的设计</li>
-//                <li>高清画质</li>
-//                <li>厚实耐用</li>
-//            </ul>
-//
-//        </div>
-//    </div>
-
+    //product_module
     var product_data=[{id:1,src:"img/product_test.jpg",title:"照片冲印",content:"独家进口,高科技产品,随撕随贴,耐刮防水"}];
     var Product_module=React.createClass({
         render:function () {
@@ -369,11 +349,6 @@
             <Product_module data={product_data}/>,
             document.getElementById('pop_products')
     );
-
-
-
-
-
 
 
 
