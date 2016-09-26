@@ -2,6 +2,11 @@ body {
   position: relative;
 }
 
+.drag_target {
+  background-color: #1b6d85;
+}
+
+
 #left_pannel, #right_pannel {
   display: inline-block;
   position: absolute;
@@ -33,6 +38,7 @@ body {
       width: 86px;
       background-size: contain;
       margin: 10px;
+      z-index: 99;
     }
   }
 
@@ -59,8 +65,31 @@ body {
     background-color: #cccccc;
 
   }
-  .page_left, .page_right {
+  .page_left, .page_right, .page_single {
     position: absolute;
+  }
+
+}
+
+#nav_bar {
+  display: block;
+  position: absolute;
+  border: 1px solid green;
+  width: 1221px;
+  height: 50px;
+  top: 645px;
+  left: 231px;
+  #page_nav_bar {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    margin: 10px 50px;
+    float: right;
+  }
+  .scale_button {
+    display: inline-block;
+    position: relative;
+    height: 100%;
   }
 
 }

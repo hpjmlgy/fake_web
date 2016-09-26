@@ -3,54 +3,222 @@
 <head>
     <meta charset="utf-8"/>
     <title>Fake Web</title>
-    <script src="js/react.js"></script>
-    <script src="js/react-dom.js"></script>
+    <!--<script src="js/react.js"></script>-->
+    <!--<script src="js/react-dom.js"></script>-->
     <script src="js/jquery-3.1.0.js"></script>
     <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!--<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>-->
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/jquery_ui/jquery-ui.min.css">
 </head>
 <body>
 <aside id="left_pannel">
     <button id="upload_img">添加照片</button>
     <section id="uploaded_imgs_wrapper">
-        <img src="img/test_upload/IMG_5759.JPG" alt="" class="img">
-        <img src="img/test_upload/IMG_5883.JPG" alt="" class="img">
-        <img src="img/test_upload/IMG_5884.JPG" alt="" class="img">
+        <img src="img/test_upload/IMG_5759.JPG" alt="" class="img" draggable="true">
+        <img src="img/test_upload/IMG_5883.JPG" alt="" class="img" draggable="true">
+        <img src="img/test_upload/IMG_5884.JPG" alt="" class="img" draggable="true">
     </section>
 </aside>
 <!--<aside id="right_pannel"></aside>-->
 
 <div id="main_platform">
     <section id="edit">
-        <section id="book_editor_all_wrapper"
-                 style="transform-origin:0px 0px;transform:scale(0.3) ; width: 1836px; height: 1216px;">
-            <div class="page_left"
-                 style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>
-            <div class="page_right"
-                 style="width: 918.425px;height: 1216.06px;left: 918px;top:0px;background-color: rgb(250, 246, 242);"></div>
-        </section>
+        <!--<section id="book_editor_all_wrapper"-->
+        <!--style="transform-origin:0px 0px;transform:scale(0.3) ; width: 1836px; height: 1216px;">-->
+        <!--<div class="page_left"-->
+        <!--style="width: 918.425px; height: 1216.06px; left: 0px;top:0px; background-color: rgb(250, 246, 242);"></div>-->
+        <!--<div class="page_right"-->
+        <!--style="width: 918.425px;height: 1216.06px;left: 918px;top:0px;background-color: rgb(250, 246, 242);"></div>-->
+        <!--</section>-->
     </section>
 </div>
+<div id="nav_bar">
+    <button class="scale_button" data-direction="up">放大编辑区</button>
+    <button class="scale_button" data-direction="down">减小编辑区</button>
+    <div class="toolbar" id="page_nav_bar">
+    </div>
+</div>
+
+<template id="book_page_type1">
+    <section id="book_editor_all_wrapper"
+             style="transform-origin:0px 0px; width:${wrapper_width}px; height:${height}px;" data-scale=${scale}
+             data-pageNum=${pageNum} data-book_page_type=${book_page_type}>
+        <div class="page_left"
+             style="width:${width}px; height:${height}px; left: 0px;top:0px; background-color: rgb(250, 246, 242);z-index: 1">
+            <!--//模板参数未完全替换区域，考虑参数命名与替换-->
+            <div class="img_Wrapper" style="position: absolute;width:900px; height:600px; background-color: #2b2b2b">
+                <span style="position: absolute; color: #c12e2a;top: 10px; left: 10px; font-size: 60px;">1444X1080</span>
+                <img class="target" src="" alt=""
+                     style="box-sizing:border-box;position: absolute;width:100%; height:100%;font-size:50px;z-index: 1;overflow: hidden;"
+                     data-width="500" data-height="500" draggable="false" data-offsetx="200" data-offsety="608">
+            </div>
+
+        </div>
+        <div class="page_right"
+             style="width:${width}px; height:${height}px;left: ${width}px;top:0px;background-color: rgb(250, 246, 242);z-index: 1">
+        </div>
+    </section>
+</template>
+
+<template id="book_page_type2">
+    <section id="book_editor_all_wrapper"
+             style="transform-origin:0px 0px; width:${wrapper_width}px; height:${height}px;" data-scale=${scale}
+             data-pageNum=${pageNum} data-book_page_type=${book_page_type}>
+        <div class="page_single"
+             style="width:${width}px; height:${height}px; left: 0px;top:0px; background-color: rgb(250, 246, 242);z-index: 1">
+            <!--//模板参数未完全替换区域，考虑参数命名与替换-->
+            <div class="img_Wrapper" style="position: absolute;width:500px; height:500px; background-color: #2b2b2b">
+                <span style="position: absolute; color: #c12e2a;top: 10px; left: 10px; font-size: 20px;">1444X1080</span>
+                <img class="target" src="" alt=""
+                     style="box-sizing:border-box;position: absolute;width:100%; height:100%;font-size:50px;z-index: 1;overflow: hidden;"
+                     data-width="500" data-height="500" draggable="false" data-offsetx="200" data-offsety="608">
+            </div>
+
+        </div>
+    </section>
+</template>
+
+<template id="page_nav">
+    <select id="page_nav_list">
+        <option selected disabled>相册页</option>
+        {{each pages}}
+        <option value=${$value.page_num}> 第${$value.page_num}页</option>
+        {{/each}}
+    </select>
+</template>
 
 </body>
+
 <script type="text/javascript">
     $(document).ready(function () {
-        var edit_platform_width = $('#edit').width();
-        var edit_platform_height = $('#edit').height();
-        var wrapper_width = $('#book_editor_all_wrapper').width();
-        var wrapper_height = $('#book_editor_all_wrapper').height();
 
-        console.log(edit_platform_width)
-        console.log(edit_platform_height)
+//        var tempcss= $('#book_editor_all_wrapper').css("transform")
+//        $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
+//         $('#book_page_type1').tmpl({width:918,height:1216}).appendTo('#edit')
 
-        console.log(wrapper_width)
-        console.log(wrapper_height)
+//        book_page_type测试时已经定死，注意修改。（单页情形未考虑）
+        var data = [{
+            pageNum: 1,
+            book_page_type: 'book_page_type1',
+            wrapper_width: 1200 * 2,
+            width: 1200,
+            height: 1216,
+            scale: 0.30
+        }, {pageNum: 2, book_page_type: 'book_page_type1', wrapper_width: 918, width: 459, height: 1216, scale: 0.3}];
+        var page_data = {pages: [{page_num: 1}, {page_num: 2}]};
+        var currentPage = 1;
+        var currentScale = data[currentPage - 1].scale;
+        var currentPageType = data[currentPage - 1].book_page_type;
 
-        var tempcss= $('#book_editor_all_wrapper').css("transform")
+        function loadingPage(page_data) {
+            $('#page_nav').tmpl(page_data).appendTo('#page_nav_bar');
+            $("#page_nav_list").selectmenu({
+                change: function (event, ui) {
+                    if (parseInt(ui.item.value)) {
+                        //empty操作之前插入保存img信息的逻辑
+                        $('#edit').empty();
+                        generateTemplate($('#book_page_type1'), data[ui.item.value - 1]);
+                        currentPage = parseInt(ui.item.value);
+                        currentPageType = data[ui.item.value - 1].book_page_type;
+                        initializeDragDrop();
+                    }
+                }
+            });
+        }
 
-        $('#book_editor_all_wrapper').css("transform",tempcss+"translate("+(((edit_platform_width-wrapper_width)/2)/0.3)+"px,"+(((edit_platform_height-wrapper_height)/2)/0.3)+"px)");
+        function generateTemplate(template_Jq, data) {
+            template_Jq.tmpl(data).appendTo('#edit')
+            centerTemplate('#edit', '#book_editor_all_wrapper', data);
+        }
+
+        function centerTemplate(editform_id, pageWrapper_id, data) {
+            var edit_platform_width = $(editform_id).width();
+            var edit_platform_height = $(editform_id).height();
+            var wrapper_width = $(pageWrapper_id).width() * data.scale;
+            var wrapper_height = $(pageWrapper_id).height() * data.scale;
+            $(pageWrapper_id).css("transform", "scale(" + data.scale + ")" + "translate(" + (((edit_platform_width - wrapper_width) / 2) / data.scale) + "px," + (((edit_platform_height - wrapper_height) / 2) / data.scale) + "px)");
+        }
+
+        function initializeDragDrop() {
+            $('.img').bind("dragstart", function (e) {
+                drag_Property.dragSrcEl = this;
+                drag_Property.src = $(this).attr('src');
+            });
+            $('#book_editor_all_wrapper').bind("dragenter", function (e) {
+                drag_Property.dragTargetEl = this;
+                $(e.target).addClass('drag_target');
+            }).bind("dragover", function (e) {
+                e.preventDefault();
+            }).bind("dragleave", function (e) {
+                drag_Property.dragTargetEl = undefined;
+                $(e.target).removeClass('drag_target');
+            }).bind('drop', function (e) {
+                e.preventDefault();
+                e.stopPropagation()
+//            console.log(e.target.tagName)
+                switch (e.target.tagName) {
+                    case 'IMG':
+                        $(e.target).attr('src', drag_Property.src);
+                }
+            }).bind("click", function (e) {
+                if (click_Property.lastTarget) {
+                    $(click_Property.lastTarget).css("border", "0px");
+                }
+                if (e.target.tagName == 'IMG') {
+                    $(e.target).css("border", "5px solid red");
+                    click_Property.currentTarget = e.target;
+                    click_Property.lastTarget = e.target;
+                }
+                else {
+                    click_Property.currentTarget = undefined;
+                }
+            })
+
+        }
+
+        function initializeScaleButton() {
+            if ($('.scale_button')) {
+                var buttons = $('.scale_button');
+                buttons.bind('click', function (e) {
+                    switch ($(this).data('direction')) {
+                        case 'up':
+                            if (currentScale < 0.4)
+                                currentScale += 0.1;
+                            //empty操作之前插入保存img信息的逻辑
+                            $('#edit').empty();
+                            data[currentPage - 1].scale = currentScale;
+                            generateTemplate($('#book_page_type1'), data[currentPage - 1]);
+                            initializeDragDrop();
+                            break;
+                        case 'down':
+                            if (currentScale > 0.3)
+                                currentScale -= 0.1;
+                            //empty操作之前插入保存img信息的逻辑
+                            $('#edit').empty();
+                            data[currentPage - 1].scale = currentScale;
+                            generateTemplate($('#book_page_type1'), data[currentPage - 1]);
+                            initializeDragDrop();
+                    }
+
+                })
+            }
+        }
+
+        loadingPage(page_data);
+
+        generateTemplate($('#book_page_type1'), data[0]);
+
+        var drag_Property = {dragSrcEl: undefined, src: "", dragTargetEl: undefined};
+
+        var click_Property = {currentTarget: undefined, lastTarget: undefined};
+
+        initializeDragDrop();
+
+        initializeScaleButton()
 
 
     })
